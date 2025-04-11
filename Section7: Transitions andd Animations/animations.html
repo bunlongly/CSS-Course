@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animations</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: #4caf50;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+
+        transition:
+          background-color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .box:hover {
+        background-color: #f44336;
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      @keyframes animateColor {
+        0% {
+          background-color: #ff9800;
+        }
+        50% {
+          background-color: #2196f3;
+        }
+        100% {
+          background-color: #f44336;
+        }
+      }
+
+      .animated {
+        animation: animateColor 3s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Animations</h1>
+    <div class="container">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box animated">Box 3</div>
+    </div>
+  </body>
+</html>
